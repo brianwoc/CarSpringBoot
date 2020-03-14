@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista aut:</title>
+</head>
+<body>
+
+<h1>Samochody w bazie danych </h1>
+<table border="2">
+
+    <thead style="background: gainsboro">
+
+    <tr>
+        <td>Numer VIN</td>
+        <td>Marka auta</td>
+        <td>Model auta</td>
+        <td>Data produkcji</td>
+        <td>Kolor auta</td>
+        <td>Usuń pojazd</td>
+        <td>Zmień dane pojazdu</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr style="font-style: italic" th:each="car: ${reportData.reportData}">
+        <!-- w zmiennej person bedzie kazda kolejna osoba z listy dostępnej w persons-->
+        <td th:text="${car.VIN}"/>
+        <td th:text="${car.brand}"/>
+        <td th:text="${car.model}"/>
+        <td th:text="${car.date}"/>
+        <td th:text="${car.color}"/>
+        <td><a href="/deleteCar" th:href="@{/deleteCar(carId=${car.id})}">Usuń pojazd</a></td>
+        <td><a href="/editCar" th:href="@{/addCar(carId=${car.id})}">Zmień dane pojazdu</a></td>
+    </tr>
+
+    </tbody>
+
+
+</table>
+
+<p th:text="'Ilość rekordów znalezionych w bazie '+${reportData.numberOfRecords}">Ilość rekordów</p>
+
+<p><a href="mainM.html" th:href="@{/}">Menu główne</a></p>
+
+</body>
+</html>

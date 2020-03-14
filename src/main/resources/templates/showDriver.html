@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kierowcy:</title>
+</head>
+<body>
+
+<h1>Kierowcy w bazie danych </h1>
+<table border="2">
+
+    <thead style="background: gainsboro">
+
+    <tr>
+        <td>Imię</td>
+        <td>Nazwisko</td>
+        <td>Całkowita liczba przejechanych metrów</td>
+        <td>Dodaj trasę do kierowcy</td>
+        <td>Zmień dane kierowcy</td>
+        <td>Usuń kierowce</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr style="font-style: italic" th:each="driver: ${drivers}">
+        <!-- w zmiennej person bedzie kazda kolejna osoba z listy dostępnej w persons-->
+        <td th:text="${driver.firstName}"/>
+        <td th:text="${driver.lastName}"/>
+        <td th:text="${driver.totalDistance}"/>
+        <td><a href="#" th:href="@{/addRouteDriver(driverId=${driver.id})}">Dodaj trasę do kierowcy</a></td>
+        <td><a href="#" th:href="@{/addDriver(driverId=${driver.id})}">Zmień dane kierowcy</a></td>
+        <td><a href="#" th:href="@{/deleteDriver(driverId=${driver.id})}">Usuń kierowce</a></td>
+    </tr>
+
+    </tbody>
+
+
+</table>
+<p><a href="mainM.html" th:href="@{/}">Menu główne</a></p>
+
+</body>
+</html>

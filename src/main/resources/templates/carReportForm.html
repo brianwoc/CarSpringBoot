@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj samochód</title>
+</head>
+<body>
+<h1>Podaj markę, model i kolor jakie chcesz dodać do raportu</h1>
+<form class="pure-form" method="post" action="#" th:object="${carReportModel}" th:action="@{/carReportForm}">
+    <p>Marka: [2-10]<input th:field="*{brand}" type="text"  ></p>
+    <p>Model: [2-10] <input th:field="*{model}" type="text"  ></p>
+
+    <p> Kolor: <select th:field="*{color}">
+        <option value="">->BRAK<-</option>
+        <option th:each="tr : ${colorModel}"
+                th:value="${tr}"
+                th:utext="${tr}"/>
+    </select></p>
+    <p><input type="submit" ></p>
+</form>
+
+</body>
+</html>

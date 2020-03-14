@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodanie nowej trasy dla kierowcy</title>
+</head>
+<body>
+<form action="#" th:action="@{/addRouteDriver}" th:object="${route}" method="post">
+
+    <p> Start point : <select th:field="*{startPointAdress}">
+        <option value="">->BRAK<-</option>
+        <option th:each="tr : ${cityModel}"
+                th:value="${tr}"
+                th:utext="${tr}"/>
+    </select></p>
+
+    <p> End point :  <select th:field="*{endPointAdress}">
+        <option value="">->BRAK<-</option>
+        <option th:each="tr : ${cityModel}"
+                th:value="${tr}"
+                th:utext="${tr}"/>
+    </select></p>
+
+    <p>Symbol of route : <input type="text" th:field="*{symbol}"></p>
+
+
+
+
+    <p>Start date: <input type="datetime-local" th:field="*{startTime}"></p>
+    <p>End date: <input type="datetime-local" th:field="*{endTime}"></p>
+
+    <p><button type="submit" th:name="driverId" th:value="${driverId}"/>
+        Zapisz trasę do kierowcy
+    </p>
+
+</form>
+</body>
+</html>

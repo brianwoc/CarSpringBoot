@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edycja trasy</title>
+</head>
+<body>
+<form action="#" th:action="@{/addRouteEdit}" th:object="${route}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+
+
+    <p> Start point : <select th:field="*{startPointAdress}">
+        <option value="">->BRAK<-</option>
+        <option th:each="tr : ${cityModel}"
+                th:value="${tr}"
+                th:utext="${tr}"/>
+    </select></p>
+
+    <p> End point :  <select th:field="*{endPointAdress}">
+        <option value="">->BRAK<-</option>
+        <option th:each="tr : ${cityModel}"
+                th:value="${tr}"
+                th:utext="${tr}"/>
+    </select></p>
+
+    <p>Symbol of route : <input type="text" th:field="*{symbol}"></p>
+    <p style="color: red; font-style: italic" th:if="${#fields.hasErrors('symbol')}" th:errors="*{symbol}">Symbol error</p>
+    <p>Start date: <input type="datetime-local" th:field="*{startTime}"></p>
+    <p>End date: <input type="datetime-local" th:field="*{endTime}"></p>
+
+    <p>
+    <p><input type="submit"></p>
+        Zapisz trasę
+    </p>
+
+</form>
+</body>
+</html>
