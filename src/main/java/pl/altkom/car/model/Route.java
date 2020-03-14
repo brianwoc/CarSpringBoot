@@ -1,5 +1,6 @@
 package pl.altkom.car.model;
 
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 import pl.altkom.car.model.Enums.City;
@@ -9,7 +10,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
-@Component
+
+@Data
 @Entity(name = "route")
 public class Route {
 
@@ -66,85 +68,6 @@ public class Route {
         this.travelTime = travelTime;
         this.distance = distance;
         this.isRealised = isRealised;
-    }
-
-
-
-
-
-    //GETTERS & SETERS ############################################
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public LocalDateTime getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(LocalDateTime startTime) {
-        this.startTime = startTime;
-    }
-
-    public LocalDateTime getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(LocalDateTime endTime) {
-        this.endTime = endTime;
-    }
-
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
-    }
-
-    public City getStartPointAdress() {
-        return startPointAdress;
-    }
-
-    public void setStartPointAdress(City startPointAdress) {
-        this.startPointAdress = startPointAdress;
-    }
-
-    public City getEndPointAdress() {
-        return endPointAdress;
-    }
-
-    public void setEndPointAdress(City endPointAdress) {
-        this.endPointAdress = endPointAdress;
-    }
-
-    public Long getDistance() {
-        return distance;
-    }
-
-    public void setDistance(Long distance) {
-        this.distance = distance;
-    }
-
-    public Long getTravelTime() {
-        return travelTime;
-    }
-
-    public void setTravelTime(Long travelTime) {
-        this.travelTime = travelTime/1000/60;
-    }
-
-    public boolean isRealised() {
-        return isRealised;
-    }
-
-    public void setRealised(boolean realised) {
-        isRealised = realised;
     }
 
 

@@ -2,6 +2,7 @@ package pl.altkom.car.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Data
 @Entity(name = "driver")
 public class Driver {
 
@@ -51,72 +53,8 @@ public class Driver {
         this.totalDistance = totalDistance;
     }
 
-    //GETTERS & SETTERS #############################################################
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public List<Route> getRoutes() {
-        return routes;
-    }
-
-    public void setRoutes(List<Route> routes) {
-        this.routes = routes;
-    }
-
-    public Long getTotalDistance() {return totalDistance;}
-
-    public void setTotalDistance(Long totalDistance) {this.totalDistance = totalDistance;}
-
-
-
 
     //METHODS ###################################################################
-
-    @Override
-    public String toString() {
-        return "Driver{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", routes=" + routes +
-                ", totalDistance=" + totalDistance +
-                '}';
-
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Driver driver = (Driver) o;
-        return Objects.equals(id, driver.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 
 
     public void addRouteToDriver(final Route route) {
