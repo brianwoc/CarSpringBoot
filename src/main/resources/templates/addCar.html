@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj samochód</title>
+
+</head>
+<body>
+<h1>Uzupełnił dane o samochód jaki chcesz dodać</h1>
+<form method="post" action="#" th:object="${car}" th:action="@{/addCar}">
+    <input type="hidden" th:field="*{id}"/>
+
+    <p>VIN: [2-10]<input th:field="*{VIN}" type="text"></p>
+    <p style="color: red; font-style: italic" th:if="${#fields.hasErrors('VIN')}" th:errors="*{VIN}">VIN error</p>
+
+    <p>Marka: [2-10]<input th:field="*{brand}" type="text"></p>
+    <p style="color: red; font-style: italic" th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}">Brand error</p>
+
+    <p>Model: [2-10] <input th:field="*{model}" type="text"></p>
+    <p style="color: red; font-style: italic" th:if="${#fields.hasErrors('model')}" th:errors="*{model}">model error</p>
+
+    <p>Data: [XXXX-XX-XX] <input th:field="*{date}" type="date"></p>
+    <p style="color: red; font-style: italic" th:if="${#fields.hasErrors('date')}" th:errors="*{date}">Date error</p>
+
+    <p> Kolor: <select th:field="*{color}">
+        <option value="">->BRAK<-</option>
+        <option th:each="tr : ${colorModel}"
+                th:value="${tr}"
+                th:utext="${tr}"/>
+    </select></p>
+    <p style="color: red; font-style: italic" th:if="${#fields.hasErrors('color')}" th:errors="*{color}">Color error</p>
+
+
+    <p><input type="submit"></p>
+</form>
+
+</body>
+</html>
