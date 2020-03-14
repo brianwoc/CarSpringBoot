@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main menu car app</title>
+<body>
+<h1>Wybierz co chcesz zrobić</h1>
+<hr>
+<a href="addCar">Dodaj samochód</a><br>
+<br>
+<a href="addDriver">Dodaj kierowce</a>
+<br>
+<p><a href="#" th:href="@{/showDriver}">Pokaż kierowców</a> </p>
+
+<a href="showCars">Pokaż samochody</a>
+
+<p><a href="#" th:href="@{/showRoutes}">Pokaż trasy</a> </p>
+
+
+<h1>Dostępne raporty:</h1>
+<hr>
+<ul >
+    <li><p><a href="#" th:href="@{/carReport(reportId=1)}"> Wszystkie auta marki BMW</a></p></li>
+    <li><p><a href="#" th:href="@{/carReport(reportId=2)}"> Wszystkie auta starsze niż 10 lat</a></p></li>
+    <li><p><a href="#" th:href="@{/carReport(reportId=3)}"> Wszystkie auta innej marki niż Volkswagen, Audi, Skoda,Seat </a></p></li>
+    <li><p><a href="#" th:href="@{/carReport(reportId=4)}"> Wszystkie auta marki Ferrari i w kolorze czerwonym </a></p></li>
+    <li><p><a href="#" th:href="@{/carReport(reportId=5)}"> Pojazdy marki Ford posortowane od najnowszego </a></p></li>
+    <li><p><a href="#" th:href="@{/carReport(reportId=6)}"> Pojazdy marki Peugeot w kolorze innym niż srebrny </a></p></li>
+    <li><p><a href="#" th:href="@{/carReportForm}"> Pojazdy o określonej marce, modelu i kolorze - wybór przez formularz </a></p>
+    </li>
+</ul>
+
+
+</body>
+</html>
