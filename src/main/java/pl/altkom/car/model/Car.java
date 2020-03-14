@@ -1,5 +1,6 @@
 package pl.altkom.car.model;
 
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 import pl.altkom.car.model.Enums.Color;
 
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
+@Data
 @Entity(name = "car")
 public class Car {
 
@@ -74,80 +77,6 @@ public class Car {
     }
 
     //GETTERS&SETTERS##################################################################
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public String getVIN() {
-        return VIN;
-    }
-
-    public void setVIN(String VIN) {
-        this.VIN = VIN;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    //METHODS####################################################
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return id == car.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "id=" + id +
-                ", brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", VIN='" + VIN + '\'' +
-                ", date='" + date + '\'' +
-                ", color='" + color + '\'' +
-                '}';
-    }
 
     public void addRoute(final Route route){
 
