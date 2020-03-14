@@ -1,0 +1,1 @@
+INSERT INTO  car(vin, brand,model,date,color) values('423424', 'BMW','A3','2001-10-21','BLACK')
