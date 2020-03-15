@@ -15,6 +15,4 @@ public interface CarRepositoryJpa extends JpaRepository<Car,Long> {
     List<Car>  getAllByBrandOrderByDateDesc(String brand);
     List <Car> getAllByBrandAndColorNotLike(String brand, Color color);
     List <Car> getAllByBrandAndModelAndColor(String brand, String Model, Color Color);
-
-
 }

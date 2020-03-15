@@ -28,7 +28,6 @@
 
     <tbody>
     <tr style="font-style: italic" th:each="route: ${routes}">
-        <!-- w zmiennej person bedzie kazda kolejna osoba z listy dostępnej w persons-->
         <td th:text="${route.distance}"/>
         <td th:text="${route.symbol}"/>
         <td th:text="${route.startPointAdress}"/>
@@ -40,8 +39,6 @@
         <td><a href="#" th:href="@{/realiseRoute(routeId=${route.id})}">Zrealizuj trasę</a></td>
         <td><a href="#" th:href="@{/deleteRoute(routeId=${route.id})}">Usuń trasę</a></td>
         <td><a href="#" th:href="@{/addRouteEdit(routeId=${route.id})}">Zmień dane trasy</a></td>
-<!--DLACZEGO THYMELEAF MA DOSTĘP DO PRYWATNYCH PÓL-->
-
     </tr>
 
     </tbody>

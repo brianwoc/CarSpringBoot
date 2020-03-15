@@ -4,7 +4,6 @@ import pl.altkom.car.model.Route;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.time.LocalDateTime;
 
 public class DataConstrainValidator implements ConstraintValidator<DataValidation, Route > {
 

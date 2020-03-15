@@ -54,9 +54,6 @@ public class Route {
     @Column(name = "realised")
     private boolean isRealised;
 
-//    @Column(name = "driver_id")
-//    private Long driverId;
-
     @ManyToOne
     private Driver driver;
 
@@ -72,7 +69,6 @@ public class Route {
     public Route() {
     }
 
-
     public Route(String symbol,LocalDateTime startTime,LocalDateTime endTime,
                  City startPointAdress,City endPointAdress, Long travelTime,Long distance, boolean isRealised) {
         this.symbol = symbol;
@@ -85,11 +81,4 @@ public class Route {
         this.isRealised = isRealised;
     }
 
-//    public Long getDriverId() {
-//        return driverId;
-//    }
-//
-//    public void setDriverId(Long driverId) {
-//        this.driverId = driverId;
-//    }
 }
