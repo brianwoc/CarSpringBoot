@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity(name = "route")
+@EqualsAndHashCode(exclude = {"driver"})
 public class Route {
 
 
@@ -30,7 +31,6 @@ public class Route {
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     @Column(name = "start_time")
     private LocalDateTime startTime;
-
 
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     @Column(name = "end_time")
@@ -53,10 +53,14 @@ public class Route {
     @Column(name = "realised")
     private boolean isRealised;
 
-    @Column(name = "driver_id")
-    private Long driverId;
+//    @Column(name = "driver_id")
+//    private Long driverId;
+
+    @ManyToOne
+    private Driver driver;
 
     //CONSTRUCTOR #################################################
+
 
     public Route() {
     }
@@ -74,11 +78,11 @@ public class Route {
         this.isRealised = isRealised;
     }
 
-    public Long getDriverId() {
-        return driverId;
-    }
-
-    public void setDriverId(Long driverId) {
-        this.driverId = driverId;
-    }
+//    public Long getDriverId() {
+//        return driverId;
+//    }
+//
+//    public void setDriverId(Long driverId) {
+//        this.driverId = driverId;
+//    }
 }

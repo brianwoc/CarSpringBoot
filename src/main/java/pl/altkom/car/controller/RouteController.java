@@ -101,34 +101,18 @@ public class RouteController {
         route.setTravelTime(example.getPaths().get(0).getTime().longValue());
 
         driver.addRouteToDriver(route);
-
-////        Long travelTime = route.getTravelTime();
-//        Long distance = route.getDistance();
-//
-//        driver.setTotalDistance(driver.getTotalDistance()+distance);
-//        //Feature - Check if route is realised
-//
-//        if (route.getEndTime().isAfter(LocalDateTime.now())){
-//            route.setRealised(true);
-//        }else {
-//            route.setRealised(false);
-//        }
-
         driverDao.save(driver);
         return "redirect:/";
     }
     @GetMapping(path = "/realiseRoute")
     public String realiseRouteAndAddDistanceToDriver(@RequestParam(name = "routeId") Long routeId){
         Route route = routeDao.getOne(routeId);
-        Driver driver = driverDao.getOne(route.getDriverId());
+        Driver driver = driverDao.getOne(route.getDriver().getId());
         Long distance = route.getDistance();
         driver.setTotalDistance(driver.getTotalDistance()+distance);
         route.setRealised(true);
         driverDao.save(driver);
-//        routeDao.save(route);
-
         return "redirect:/";
-
     }
 
 

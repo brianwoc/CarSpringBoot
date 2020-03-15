@@ -1,4 +1,4 @@
-package pl.altkom.car.controller;
+package pl.altkom.car.controller.exception;
 
 public class DriverNotFoundException extends RuntimeException {
 

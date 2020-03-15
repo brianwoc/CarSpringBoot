@@ -37,7 +37,7 @@ public class DriverController {
 
         List<Driver> allDrivers = driverDao.findAll();
 
-        System.out.println(allDrivers);
+//        System.out.println(allDrivers);
         model.addAttribute("drivers", allDrivers);
         return "showDriver";
     }

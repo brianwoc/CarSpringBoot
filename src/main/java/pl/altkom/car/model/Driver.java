@@ -35,8 +35,7 @@ public class Driver {
     private String lastName;
 
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "driver_id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "driver")
     private List<Route> routes = new ArrayList<>(0);
 
     private Long totalDistance;
@@ -59,7 +58,9 @@ public class Driver {
 
 
     public void addRouteToDriver(final Route route) {
-
+        route.setDriver(this);
         this.routes.add(route);
     }
+
+
 }

@@ -27,11 +27,7 @@
     <p style="color: red; font-style: italic" th:if="${#fields.hasErrors('symbol')}" th:errors="*{symbol}">Symbol error</p>
     <p>Start date: <input type="datetime-local" th:field="*{startTime}"></p>
     <p>End date: <input type="datetime-local" th:field="*{endTime}"></p>
-
-    <p>
     <p><input type="submit"></p>
-        Zapisz trasę
-    </p>
 
 </form>
 </body>

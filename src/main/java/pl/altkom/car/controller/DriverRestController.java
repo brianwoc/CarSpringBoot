@@ -2,6 +2,7 @@ package pl.altkom.car.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pl.altkom.car.controller.exception.DriverNotFoundException;
 import pl.altkom.car.model.Driver;
 import pl.altkom.car.repository.DriverRepositoryJpa;
 
@@ -32,8 +33,6 @@ public class DriverRestController {
     return null;
     }
 
-
-
     @DeleteMapping("/drivers/{driverId}")
     public String deleteDriver(@PathVariable Long driverId) {
 
@@ -47,7 +46,6 @@ public class DriverRestController {
 
     @PostMapping("/drivers")
     public Driver addDriver(@RequestBody Driver driver) {
-
         driver.setId(0L);
         driverDao.save(driver);
         return driver;
@@ -55,7 +53,6 @@ public class DriverRestController {
 
     @PutMapping("/drivers")
     public Driver updateDriver(@RequestBody Driver driver) {
-
         driverDao.save(driver);
         return driver;
     }
