@@ -1,0 +1,171 @@
+{
+	"id": "c6b6ba0d-9467-4c1a-8e9e-8661960e9669",
+	"name": "Test",
+	"timestamp": "2020-03-15T15:25:55.737Z",
+	"collection_id": "9185c504-08ff-4b3f-860e-e482db04d3e3",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "16f22bbf-44de-4b49-9b88-0fc1a84da631",
+			"name": "http://localhost:8080/api/drivers/",
+			"url": "http://localhost:8080/api/drivers/1",
+			"time": 80,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				80
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a727d244-5f93-4c95-a0b6-1bf2ebdb6312",
+			"name": "http://localhost:8080/api/drivers/1",
+			"url": "http://localhost:8080/api/drivers/1",
+			"time": 23,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				23
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9d16f727-cd85-4f3a-b126-ee26d0f62e81",
+			"name": "http://localhost:8080/api/drivers/2",
+			"url": "http://localhost:8080/api/drivers/2",
+			"time": 17,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				17
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e3e845c3-8931-440e-bf4d-3ccd186d562b",
+			"name": "http://localhost:8080/api/drivers/3",
+			"url": "http://localhost:8080/api/drivers/3",
+			"time": 15,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				15
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "47772b99-e3e4-455d-a974-651c1ff0dd35",
+			"name": "http://localhost:8080/api/drivers/",
+			"url": "http://localhost:8080/api/drivers/",
+			"time": 22,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				22
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7dd55ce5-0700-4f34-b705-6771bd879818",
+			"name": "http://localhost:8080/api/drivers",
+			"url": "http://localhost:8080/api/drivers",
+			"time": 19,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				19
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "25e6d0e5-a087-4793-bca9-f9541f251478",
+			"name": "http://localhost:8080/api/drivers/",
+			"url": "http://localhost:8080/api/drivers/6",
+			"time": 59,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				59
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"collection": {
+		"requests": [
+			{
+				"id": "16f22bbf-44de-4b49-9b88-0fc1a84da631",
+				"method": "GET"
+			},
+			{
+				"id": "a727d244-5f93-4c95-a0b6-1bf2ebdb6312",
+				"method": "GET"
+			},
+			{
+				"id": "9d16f727-cd85-4f3a-b126-ee26d0f62e81",
+				"method": "GET"
+			},
+			{
+				"id": "e3e845c3-8931-440e-bf4d-3ccd186d562b",
+				"method": "GET"
+			},
+			{
+				"id": "47772b99-e3e4-455d-a974-651c1ff0dd35",
+				"method": "POST"
+			},
+			{
+				"id": "7dd55ce5-0700-4f34-b705-6771bd879818",
+				"method": "PUT"
+			},
+			{
+				"id": "25e6d0e5-a087-4793-bca9-f9541f251478",
+				"method": "DELETE"
+			}
+		]
+	}
+}

@@ -1,13 +1,10 @@
 package pl.altkom.car.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.altkom.car.model.Driver;
 import pl.altkom.car.repository.DriverRepositoryJpa;
 
-import javax.websocket.server.PathParam;
-import java.net.URI;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -56,7 +53,7 @@ public class DriverRestController {
         return driver;
     }
 
-    @PutMapping("api/drivers")
+    @PutMapping("/drivers")
     public Driver updateDriver(@RequestBody Driver driver) {
 
         driverDao.save(driver);
