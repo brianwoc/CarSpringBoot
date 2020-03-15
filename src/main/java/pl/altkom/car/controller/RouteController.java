@@ -19,6 +19,7 @@ import pl.altkom.car.repository.RouteRepositoryJpa;
 import pl.altkom.car.service.ApiService;
 
 import javax.validation.Valid;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -101,21 +102,36 @@ public class RouteController {
 
         driver.addRouteToDriver(route);
 
-//        Long travelTime = route.getTravelTime();
-        Long distance = route.getDistance();
-
-        driver.setTotalDistance(driver.getTotalDistance()+distance);
-        //Feature - Check if route is realised
-
-        if (route.getEndTime().isAfter(LocalDateTime.now())){
-            route.setRealised(true);
-        }else {
-            route.setRealised(false);
-        }
+////        Long travelTime = route.getTravelTime();
+//        Long distance = route.getDistance();
+//
+//        driver.setTotalDistance(driver.getTotalDistance()+distance);
+//        //Feature - Check if route is realised
+//
+//        if (route.getEndTime().isAfter(LocalDateTime.now())){
+//            route.setRealised(true);
+//        }else {
+//            route.setRealised(false);
+//        }
 
         driverDao.save(driver);
         return "redirect:/";
     }
+    @GetMapping(path = "/realiseRoute")
+    public String realiseRouteAndAddDistanceToDriver(@RequestParam(name = "routeId") Long routeId){
+        Route route = routeDao.getOne(routeId);
+        Driver driver = driverDao.getOne(route.getDriverId());
+        Long distance = route.getDistance();
+        driver.setTotalDistance(driver.getTotalDistance()+distance);
+        route.setRealised(true);
+        driverDao.save(driver);
+//        routeDao.save(route);
+
+        return "redirect:/";
+
+    }
+
+
 
     @GetMapping(path = "/showRoutes")
     public String prepareAllRoutesView(final Model model) {

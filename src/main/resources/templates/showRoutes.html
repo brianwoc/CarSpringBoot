@@ -35,7 +35,10 @@
         <td th:text="${route.startTime}"/>
         <td th:text="${route.endTime}"/>
         <td th:text="${route.travelTime}"/>
-        <td th:text="${route.isRealised()} ? 'Zrealizowano' : 'Niezrealizowano'"></td>
+
+        <td><a href="#" th:href="@{/realiseRoute(routeId=${route.id})}">Zrealizuj trasę</a></td>
+
+        <!--        <td th:text="${route.isRealised()} ? 'Zrealizowano' : 'Niezrealizowano'"></td>-->
         <td><a href="#" th:href="@{/deleteRoute(routeId=${route.id})}">Usuń trasę</a></td>
         <td><a href="#" th:href="@{/addRouteEdit(routeId=${route.id})}">Zmień dane trasy</a></td>
 <!--DLACZEGO THYMELEAF MA DOSTĘP DO PRYWATNYCH PÓL-->
