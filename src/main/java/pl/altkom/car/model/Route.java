@@ -11,9 +11,11 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
+
 @Data
 @Entity(name = "route")
 @EqualsAndHashCode(exclude = {"driver"})
+@DataValidation
 public class Route {
 
 
@@ -27,7 +29,6 @@ public class Route {
     @Column(name = "symbol")
     private String symbol;
 
-    //@DataValidation
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     @Column(name = "start_time")
     private LocalDateTime startTime;

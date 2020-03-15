@@ -53,14 +53,16 @@ public class RouteController {
 
     @PostMapping(path = "/addRoute")
     public String processRuteForm(@RequestParam(name = "carId") Long carId,
-                                  @Valid Route route, BindingResult bindingResult) {
+                                  @Valid Route route, BindingResult bindingResult, Model model) {
+        model.addAttribute("cityModel", City.values());
+        model.addAttribute("carId", carId);
+
         if (bindingResult.hasErrors()) {
             return "addRoute";
         }
         Car car = carDao.getOne(carId);
         City city1 = route.getStartPointAdress();
         City city2 = route.getEndPointAdress();
-
 
         Example example = apiService.getExample(city1.getLatitude(), city1.getLongitude(), city2.getLatitude(), city2.getLongitude());
         route.setDistance(example.getPaths().get(0).getDistance().longValue());
@@ -85,7 +87,10 @@ public class RouteController {
 
     @PostMapping(path = "/addRouteDriver")
     public String processDriverRouteForm(@RequestParam(name = "driverId") Long driverId,
-                                         @Valid Route route, BindingResult bindingResult) {
+                                         @Valid Route route, BindingResult bindingResult, Model model) {
+
+        model.addAttribute("cityModel", City.values());
+        model.addAttribute("driverId", driverId);
 
         if (bindingResult.hasErrors()) {
             return "addRouteDriver";
@@ -114,7 +119,6 @@ public class RouteController {
         driverDao.save(driver);
         return "redirect:/";
     }
-
 
 
     @GetMapping(path = "/showRoutes")
