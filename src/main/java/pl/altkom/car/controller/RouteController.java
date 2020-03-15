@@ -64,6 +64,7 @@ public class RouteController {
         City city1 = route.getStartPointAdress();
         City city2 = route.getEndPointAdress();
 
+
         Example example = apiService.getExample(city1.getLatitude(), city1.getLongitude(), city2.getLatitude(), city2.getLongitude());
         route.setDistance(example.getPaths().get(0).getDistance().longValue());
         route.setTravelTime((example.getPaths().get(0).getTime()).longValue());
@@ -163,14 +164,11 @@ public class RouteController {
         return "addRouteEdit";
     }
 
-
     @PostMapping(path = "/addRouteEdit")
     public String processRuteFormEdit(@Valid Route route, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "addRouteEdit";
         }
-
-
         City city1 = route.getStartPointAdress();
         City city2 = route.getEndPointAdress();
 

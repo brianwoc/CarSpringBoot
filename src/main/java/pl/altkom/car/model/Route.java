@@ -63,6 +63,12 @@ public class Route {
     //CONSTRUCTOR #################################################
 
 
+    public void setTravelTime(Long travelTime) {
+        double travelTimeMinute = travelTime /1000 / 60;
+
+        this.travelTime = (long)travelTimeMinute;
+    }
+
     public Route() {
     }
 
