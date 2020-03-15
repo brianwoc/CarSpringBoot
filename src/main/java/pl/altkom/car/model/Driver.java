@@ -39,10 +39,11 @@ public class Driver {
     @JoinColumn(name = "driver_id")
     private List<Route> routes = new ArrayList<>(0);
 
-    private Long totalDistance=0L;
+    private Long totalDistance;
 
     //CONSTRUCTORS########################################################
     public Driver() {
+        this.totalDistance =0L;
     }
 
 

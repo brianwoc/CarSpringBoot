@@ -40,11 +40,7 @@ public class DriverController {
         System.out.println(allDrivers);
         model.addAttribute("drivers", allDrivers);
         return "showDriver";
-
-
     }
-
-
 
     @GetMapping("/addDriver")
     public String showForm(Driver driver, @RequestParam(name = "driverId", required = false) Long driverId, Model model){
@@ -55,6 +51,7 @@ public class DriverController {
             driver.setId((foundDriver.getId()));
             driver.setFirstName((foundDriver.getFirstName()));
             driver.setLastName((foundDriver.getLastName()));
+            driver.setTotalDistance(foundDriver.getTotalDistance());
         }
         System.out.printf("Metoda GetMappingId= %s%n", driverId);
         return "addDriver";

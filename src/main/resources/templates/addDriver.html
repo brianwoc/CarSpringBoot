@@ -9,6 +9,8 @@
 <h1>Uzupełnił dane kierowcy</h1>
 <form method="post" action="#" th:object="${driver}" th:action="@{/addDriver}">
     <input type="hidden" th:field="*{id}"/>
+    <input type="hidden" th:field="*{totalDistance}"/>
+
 
     <p>Imię [2-10]<input th:field="*{firstName}" type="text"></p>
     <p style="color: red; font-style: italic" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">first Name error</p>

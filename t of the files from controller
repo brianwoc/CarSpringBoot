@@ -1,0 +1,23 @@
+* [33m4b728c6[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;32mrealiseRouteByDriver[m[33m)[m Try to add in data generator route connected with driver - Fail
+* [33m867baa8[m add in showRoutes new column  with status of route
+* [33md6f02e8[m Change Route controller and add driverId property in Route class
+* [33macddffa[m Add test from postman
+* [33m6885d33[m Add @Data from Lombok to rest model class:
+* [33m999f04e[m Add project Lombok pom.xml. To  Car class add @Data
+* [33mbccd4b2[m Add rest of the files from test
+* [33m32efae0[m Add rest of the files from resources
+* [33m97a0c2a[m Add rest of the files from templates
+* [33m0f5942b[m Add rest of the files from config
+* [33m597c65b[m Add rest of the files from controller
+* [33m0d0c375[m Add rest of the files from services
+* [33m3fa531b[m Add rest of the files from repository
+* [33m802cbc5[m Add rest of the files from model
+* [33me27777e[m Add driver model
+* [33m36d1136[m Add showCar view template
+* [33m512610f[m Add addCar view template
+* [33m54fc204[m Add main menu view template
+* [33m98ffff6[m Add car controller
+* [33mab55a7a[m Add car repostiory interface
+* [33mae6c267[m Add car class
+* [33m56ac487[m Add first file with PSVM and spring configuration
+* [33m8eef3aa[m Init commit. Create project and firs file pom.xml
