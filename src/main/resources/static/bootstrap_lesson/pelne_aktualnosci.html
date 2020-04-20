@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/style2.css"/>
+    <meta charset="UTF-8">
+    <title>Test Bootstrap</title>
+</head>
+<body>
+
+<div class="main-container container">
+    <!--Menu głowne-->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark main-navigation fixed-top">
+
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-strony"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href="#" class="navbar-brand">Bootstrap site</a>
+
+        </div>
+        <div id="menu-strony" class="collapse navbar-collapse">
+            <li class="nav-item"><a href="#">Strona główna</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">O nas <b class="carret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Osiągniecia firmy</a></li>
+                    <li><a href="#">Historia firmy</a></li>
+                    <li><a href="#">Konto firmy</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="#">Newsy</a></li>
+            <li class="nav-item"><a href="#">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!--Menu głowne-->
+
+
+    <!--Tresc początek-->
+    <div class="main-content subsite-main-content">
+        <div class="row">
+            <section class="subsite-content col-md-9">
+                <ul class="breadcrumb">
+                    <li><a href="#">Strona główna</a></li>
+                    <li><a href="#">Aktualności</a></li>
+                    <li><a href="#">Tytuł artykułu</a></li>
+                </ul>
+                <h2 class="pb-2 mt-4 mb-2 border-bottom">Naglowek artykulu</h2>
+                <p class="text-justify lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae auctor nisi. Praesent eu libero vitae purus sollicitudin fermentum eget et quam. Maecenas elit lorem, viverra sed velit et, dignissim gravida tortor. Donec enim tortor, dictum sed tempor eget, aliquam a lorem. Nullam id convallis magna. Donec quis orci at dolor facilisis efficitur porta nec ante. Quisque a leo cursus, ullamcorper turpis ut, tempor ipsum. In placerat odio vitae nulla rutrum, vitae molestie purus blandit. Maecenas eu mattis erat. Sed molestie justo felis, sit amet viverra tellus commodo aliquam. Sed id varius urna. Suspendisse vestibulum, odio eget cursus sagittis, lectus velit euismod lectus, eget vestibulum nulla sapien sed urna. Quisque quis nulla tortor. Quisque auctor varius felis, vel vulputate dolor ultrices vel.</p>
+
+                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae auctor nisi. Praesent eu libero vitae purus sollicitudin fermentum eget et quam. Maecenas elit lorem, viverra sed velit et, dignissim gravida tortor. Donec enim tortor, dictum sed tempor eget, aliquam a lorem. Nullam id convallis magna. Donec quis orci at dolor facilisis efficitur porta nec ante. Quisque a leo cursus, ullamcorper turpis ut, tempor ipsum. In placerat odio vitae nulla rutrum, vitae molestie purus blandit. Maecenas eu mattis erat. Sed molestie justo felis, sit amet viverra tellus commodo aliquam. Sed id varius urna. Suspendisse vestibulum, odio eget cursus sagittis, lectus velit euismod lectus, eget vestibulum nulla sapien sed urna. Quisque quis nulla tortor. Quisque auctor varius felis, vel vulputate dolor ultrices vel.</p>
+
+                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae auctor nisi. Praesent eu libero vitae purus sollicitudin fermentum eget et quam. Maecenas elit lorem, viverra sed velit et, dignissim gravida tortor. Donec enim tortor, dictum sed tempor eget, aliquam a lorem. Nullam id convallis magna. Donec quis orci at dolor facilisis efficitur porta nec ante. Quisque a leo cursus, ullamcorper turpis ut, tempor ipsum. In placerat odio vitae nulla rutrum, vitae molestie purus blandit. Maecenas eu mattis erat. Sed molestie justo felis, sit amet viverra tellus commodo aliquam. Sed id varius urna. Suspendisse vestibulum, odio eget cursus sagittis, lectus velit euismod lectus, eget vestibulum nulla sapien sed urna. Quisque quis nulla tortor. Quisque auctor varius felis, vel vulputate dolor ultrices vel.</p>
+
+                <form>
+                    <div class="form-group">
+                        <label >Wpisz swoj komentarz:</label>
+                        <textarea class="form form-control"></textarea>
+                    </div>
+                    <div class="form-group float-right">
+                        <button class="btn badge-primary">wyslij komentarz</button>
+                    </div>
+                </form>
+            </section>
+            <aside class="sidebar col-md-3 ">
+                <ol class="nav flex-column nav-pills ">
+                    <li class="nav-link"><a href="#">2020</a></li>
+                    <li class="nav-link"><a href="#">2019</a></li>
+                    <li class="nav-link"><a href="#">2018</a></li>
+                </ol>
+            </aside>
+
+        </div>
+
+
+    </div>
+</div>
+<!--Tresc koniec-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

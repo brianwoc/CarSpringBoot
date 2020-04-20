@@ -1,0 +1,49 @@
+.page-wrapper{background-color: silver;
+
+}
+.gray-box div{
+min-height: 150px;
+background: gray
+}
+
+.white-box div{
+min-height: 100px;
+background: white
+}
+
+.white-box .row .yellow-box{
+background: silver
+}
+
+.yellow-box div{
+   min-height: 100px;
+   background: yellow
+   }
+
+   .green-box div{
+   background: green
+   }
+
+  .blue-box div{
+     min-height: 150px;
+     background: blue
+     }
+
+     .red-box div{
+        min-height: 150px;
+        background: red
+        }
+
+.gray-box,
+.white-box,
+.blue-box,
+.green-box,
+.yellow-box,
+.red-box
+{
+margin-bottom:20px;}
+
+@media (min-width:992px) and (max-width:1199px){
+body{
+background:red;
+}}

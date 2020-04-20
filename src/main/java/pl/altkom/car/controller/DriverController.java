@@ -23,30 +23,25 @@ import java.util.List;
 @Controller
 public class DriverController {
 
-    @Autowired
-    private RouteRepositoryJpa routeDao;
-
-    @Autowired
     private DriverRepositoryJpa driverDao;
 
     @Autowired
-    private CarRepositoryJpa carDao;
+    public DriverController(DriverRepositoryJpa driverDao) {
+        this.driverDao = driverDao;
+    }
 
     @GetMapping(path = "/showDriver")
     public String prepareAllDriversView(final Model model) {
-
         List<Driver> allDrivers = driverDao.findAll();
-
-//        System.out.println(allDrivers);
         model.addAttribute("drivers", allDrivers);
         return "showDriver";
     }
 
     @GetMapping("/addDriver")
-    public String showForm(Driver driver, @RequestParam(name = "driverId", required = false) Long driverId, Model model){
+    public String showForm(Driver driver, @RequestParam(name = "driverId", required = false) Long driverId, Model model) {
 
 
-        if (driverId!= null){
+        if (driverId != null) {
             Driver foundDriver = driverDao.findById(driverId).get();
             driver.setId((foundDriver.getId()));
             driver.setFirstName((foundDriver.getFirstName()));
@@ -59,24 +54,22 @@ public class DriverController {
 
     @PostMapping("/addDriver")
     public String processForm(@Valid Driver driver,
-                              BindingResult bindingResult){
+                              BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "addDriver";
         }
 
         driverDao.save(driver);
-        System.out.printf("%s,%s%n",driver.getFirstName(),driver.getLastName());
+        System.out.printf("%s,%s%n", driver.getFirstName(), driver.getLastName());
         return "redirect:/";
     }
 
     @GetMapping("/deleteDriver")
-    public String deleteCars(@RequestParam(name = "driverId") Long driverId){
+    public String deleteCars(@RequestParam(name = "driverId") Long driverId) {
         System.out.printf("Usuniecie kierowcy o id = %d%n", driverId);
         driverDao.deleteById(driverId);
         return "redirect:/";
     }
-
-
 
 
 }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/style2.css"/>
+    <meta charset="UTF-8">
+    <title>Test Bootstrap</title>
+</head>
+<body>
+
+<div class="main-container container">
+    <!--Menu głowne-->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark main-navigation fixed-top">
+
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-strony"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href="#" class="navbar-brand">Bootstrap site</a>
+
+        </div>
+        <div id="menu-strony" class="collapse navbar-collapse">
+            <li class="nav-item"><a href="#">Strona główna</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">O nas <b class="carret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Osiągniecia firmy</a></li>
+                    <li><a href="#">Historia firmy</a></li>
+                    <li><a href="#">Konto firmy</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="#">Newsy</a></li>
+            <li class="nav-item"><a href="#">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!--Menu głowne-->
+
+    <!--Slider poczatek-->
+    <div class="slider-container">SLIDER</div>
+    <!--Slider koniec-->
+
+    <!--Tresc początek-->
+    <div class="main-content subsite-main-content">
+        <div class="row">
+            <section class="subsite-content col-md-9">
+                TRESC GLOWNA
+            </section>
+            <aside class="sidebar col-md-3">
+                TRESC PANELU
+            </aside>
+
+        </div>
+
+
+    </div>
+</div>
+<!--Tresc koniec-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

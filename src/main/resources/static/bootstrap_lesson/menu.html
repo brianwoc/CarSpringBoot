@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../css/style.css"/>
+    <meta charset="UTF-8">
+    <title>Test Bootstrap</title>
+</head>
+<body>
+
+    ZAWARTOSC STRONY
+
+    <div class="container">
+            <ul class="nav nav-tabs " >
+                <li class="nav-item"> <a class="nav-link active" href="#">menu1</a></li>
+                <li> <a href="#">menu1</a></li>
+                <li> <a href="#">menu1</a></li>
+            </ul>
+
+
+<br>
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"> <a href="#">menu1</a></li>
+            <li > <a href="#">menu1</a></li>
+            <li> <a href="#">menu1</a></li>
+            <li class="disabled"> <a href="#">menu1</a></li>
+            <li> <a href="#">menu1</a></li>
+        </ul>
+<!--    </div>-->
+
+
+        <ul id="menu-zakladki" class="nav nav-tabs nav-justified">
+            <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+        </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#contact">Contact</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#info">Info</a>
+            </li>
+        </ul>
+
+       <div  class="tab-content">
+           <div id="home" class="tab-pane active">
+               <p>Home </p>
+               DFSDASDSDASdsdad
+               dsada das
+               d asdas dasd
+               d asd
+               <br>
+           </div>
+
+           <div id="contact" class="tab-pane">
+               <p>Contact </p>
+               DFSDASDSDASdsdad
+               dsada dasdsadad
+               d asdas dasdsaddasdsad
+               <br>
+           </div>
+
+           <div id="info" class="tab-pane">
+               <p>Info </p>
+               DFSDASDSDASdsdad
+               dsadadasd asd das
+               d asdasadsdsad dasd
+               d sdasdasddasdasdadasdasda
+               <br>
+           </div>
+       </div>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+        <script type="text/javascript">
+            $('#menu-zakladki a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+
+            })
+
+        </script>
+</body>
+</html>
