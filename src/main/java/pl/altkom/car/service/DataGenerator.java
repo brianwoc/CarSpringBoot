@@ -1,15 +1,19 @@
 package pl.altkom.car.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 import pl.altkom.car.model.Car;
 import pl.altkom.car.model.Enums.City;
 import pl.altkom.car.model.Enums.Color;
 import pl.altkom.car.model.Driver;
 import pl.altkom.car.model.Route;
+import pl.altkom.car.model.User;
 import pl.altkom.car.repository.CarRepositoryJpa;
 import pl.altkom.car.repository.DriverRepositoryJpa;
 import pl.altkom.car.repository.RouteRepositoryJpa;
+import pl.altkom.car.repository.UsersRepositoryJpa;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDate;
@@ -23,6 +27,7 @@ public class DataGenerator {
     private CarRepositoryJpa carDao;
     @Autowired
     private RouteRepositoryJpa routeDao;
+
 
     @PostConstruct
     public void createSomeData(){
@@ -45,6 +50,9 @@ public class DataGenerator {
         Driver driver1 = new Driver("Iza", "Nowak",0L);
         driver1.addRouteToDriver(new Route("KR-KAT", LocalDateTime.of(2020,04,19,8,54), LocalDateTime.of(2020,04,20,8,54), City.KRAKÓW, City.KATOWICE, 69L, 89770L, false));
         driverDao.save(driver1);
+
+
+
 
     }
 
