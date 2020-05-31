@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <title>Kierowcy:</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/style2.css" th:href="@{/css/style2.css}"/>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/css/bootstrap.min.css}"/>
+    <script src="../static/js/bootstrap.bundle.js" th:src="@{/js/bootstrap.bundle.js}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<header th:replace="fragments/header::header">
+</header>
 
 <h1>Kierowcy w bazie danych </h1>
 <table border="2">
@@ -38,5 +44,6 @@
 </table>
 <p><a href="mainM.html" th:href="@{/}">Menu główne</a></p>
 
+<footer th:replace="fragments/footer::footer">Example</footer>
 </body>
 </html>
