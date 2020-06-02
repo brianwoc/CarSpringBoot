@@ -34,10 +34,10 @@
     <p>End date: <input type="datetime-local" th:field="*{endTime}"></p>
     <p style="color: red; font-style: italic" th:if="${#fields.hasErrors('global')}" th:errors="*{global}">Symbol error</p>
 
-
     <p>
-        <button type="submit" th:name="carId" th:value="${carId}"/>
-        Zapisz trasę do samochodu
+        <button type="submit" th:name="carId" th:value="${carId}">
+            Zapisz trasę do samochodu
+        </button>
     </p>
 
 </form>

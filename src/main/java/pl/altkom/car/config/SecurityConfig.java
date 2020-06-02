@@ -40,7 +40,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.headers().disable();
         http.authorizeRequests()
-                .antMatchers("/").authenticated()
+                .antMatchers("/").permitAll()
+                .antMatchers("/carReport").authenticated()
+                .antMatchers("/carReportForm").authenticated()
+                .antMatchers("/add*").hasRole("ADMIN")
                 .and()
                 .formLogin().defaultSuccessUrl("/");
     }

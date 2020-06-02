@@ -11,12 +11,12 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
-
 @Data
 @Entity(name = "route")
 @EqualsAndHashCode(exclude = {"driver"})
 @DataValidation
 public class Route {
+
 
 
     // POLA ################################################
@@ -60,12 +60,6 @@ public class Route {
     //CONSTRUCTOR #################################################
 
 
-    public void setTravelTime(Long travelTime) {
-        double travelTimeMinute = travelTime /1000 / 60;
-
-        this.travelTime = (long)travelTimeMinute;
-    }
-
     public Route() {
     }
 
@@ -79,6 +73,15 @@ public class Route {
         this.travelTime = travelTime;
         this.distance = distance;
         this.isRealised = isRealised;
+    }
+
+
+    public boolean isRealised() {
+        return isRealised;
+    }
+
+    public void setRealised(boolean realised) {
+        isRealised = realised;
     }
 
 }

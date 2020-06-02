@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Size;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -17,11 +19,13 @@ public class User implements UserDetails {
     @Id()
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Size(min = 2, max = 10)
     private String username;
+    @Email
     private String email;
     private String password;
     private String role;
-    private boolean isEnabled;
+    private boolean isEnabled = true;
 
     public User() {
     }

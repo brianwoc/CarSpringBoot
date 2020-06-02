@@ -18,5 +18,14 @@ public class StartUser {
         user1.setEnabled(true);
         user1.setRole("ROLE_ADMIN");
         userDao.save(user1);
+
+        User user2 = new User();
+        user2.setUsername("brian2");
+        user2.setPassword(passwordEncoder.encode("1234"));
+        user2.setEmail("br.skrzynka2@gmail.com");
+        user2.setEnabled(true);
+        user2.setRole("ROLE_USER");
+        userDao.save(user2);
+
     }
 }
